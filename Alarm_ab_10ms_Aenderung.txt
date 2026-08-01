@@ -1,0 +1,16 @@
+Ersetze in deiner Cockpit-Datei diese beiden Funktionen:
+
+local function shouldPlayWarning()
+    return hasSignal
+        and speed >= 10
+        and altitude < VOICE_HEIGHT
+        and volumeLevel > 0
+end
+
+local function shouldPlayCaution()
+    return hasSignal
+        and speed >= 10
+        and altitude >= VOICE_HEIGHT
+        and altitude < CAUTION_SOUND_HEIGHT
+        and volumeLevel > 0
+end
